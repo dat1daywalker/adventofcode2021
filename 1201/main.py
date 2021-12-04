@@ -1,11 +1,14 @@
 """
-    Dat 1 Advent Calendar 2021
+    Day 1 Advent Calendar 2021
     main.py
 """
 
 import sys
-import os
 
+"""
+   Clean White Space from Input
+   Requires a List 
+"""
 def clean_input(input):
     new_input = []
     for item in input:
@@ -14,6 +17,9 @@ def clean_input(input):
         
     return new_input
 
+"""
+    Part 1 of Challenge  
+"""
 def get_increases(readings):
     # Initialize Iterator Number
     num = 0
@@ -27,10 +33,14 @@ def get_increases(readings):
                         
     return num                 
 
+"""
+    Part 2 of Challenge  
+"""
 def get_windowed_increases(readings):
     num = 0
     
     for i in range(0, len(readings)-3):
+        # God forgive me for I have sinned with this hardcode
         current_sum = int(readings[i]) + int(readings[i+1]) + int(readings[i+2])
         next_sum = int(readings[i+1]) + int(readings[i+2]) + int(readings[i+3])
         
